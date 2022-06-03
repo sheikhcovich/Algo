@@ -34,35 +34,3 @@ const threeSum = (nums = []) => {
   }
   return result;
 };
-
-const threeSum = (nums = [-1, -1, 2]) => {
-  if (nums.length < 3) return [];
-
-  let map = new Map();
-  let i = 0;
-  while (i < nums.length) {
-    map.set(nums[i], i);
-    i++;
-  }
-
-  nums.sort();
-
-  let start = 0,
-    end = nums.length - 1;
-
-  let triplets = [];
-
-  do {
-    let sum = nums[start] + nums[end];
-    let val = map.get(sum);
-    if (val !== undefined) {
-      if (val !== start && val !== end)
-        triplets.push([nums[start], nums[end], sum]);
-    }
-
-    if (sum >= 0) end--;
-    if (sum <= 0) start++;
-  } while (start < end);
-
-  return triplets;
-};
