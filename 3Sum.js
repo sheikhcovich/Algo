@@ -1,3 +1,3 @@
 const threeSum = function () {
-  // do the logic here
+  // do the logic here.
 };
